@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+  padding: 20px;
+  background-color: #fc8600;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 80px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li a i {
+  margin-right: 10px;
+}
+
+/* Sign-in Button Styling */
+.signin-btn {
+  background-color: black;
+  color: white;
+  padding: 20px 20px; /* Adjust padding to make button bigger/smaller */
+  border-radius: 5px;
+  font-size: 1rem; /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signin-btn:hover {
+  background-color: #333; /* Darken on hover */
+}
+
