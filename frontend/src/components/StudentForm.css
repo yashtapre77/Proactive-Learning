@@ -1,0 +1,66 @@
+
+  
+  .student-form {
+    background-color: #fff; /* White */
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /* Black text */
+  }
+  
+  h2 {
+    color: #ff7f00; /* Orange */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* Black text */
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  input[type="text"]:disabled {
+    background-color: #e9e9e9;
+  }
+  
+  .buttons {
+    grid-column: span 2;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #ff7f00; /* Orange */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #e66700; /* Darker orange */
+  }

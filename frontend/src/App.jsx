@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import './App.css';
 import Footer from './components/Footer.jsx';
 import Students from './pages/Students.jsx';
+import AddStudent from './pages/AddStudent.jsx';
 import {
   BrowserRouter as Router,
   Route,
@@ -20,6 +21,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Dashboard/>}></Route>
               <Route path='/Students' element={<Students/>}></Route>
+              <Route path='/AddStudent' element={<AddStudent/>}></Route>
             </Routes>
           </main>
         </div>
