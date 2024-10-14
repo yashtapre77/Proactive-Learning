@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import Sidebar from './Sidebar';
 
 const overallData = [
   { name: 'Jan', value: 20000 },
@@ -88,10 +87,15 @@ const Dashboard = () => {
 
   return (
     <div className="flex dashboard-container">
-      <Sidebar setYear={setYear} />
+      {/* Sidebar component */}
+      <div className="sidebar bg-gray-100 p-5 h-screen shadow-lg">
+        <h2 className="font-bold text-xl mb-4">Select Year</h2>
+        <button onClick={() => setYear('Overall')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">Overall</button>
+        <button onClick={() => setYear('3rdYear')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">3rd Year</button>
+        <button onClick={() => setYear('4thYear')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">4th Year</button>
+      </div>
 
       <div className="grid grid-cols-4 gap-4 p-5 flex-1">
-
         <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Highest Mark</div>
         <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Lowest Mark</div>
         <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Median Score</div>
