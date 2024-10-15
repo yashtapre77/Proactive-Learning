@@ -6,7 +6,7 @@ const studentDetails = {
   branch: 'Computer Science',
   year: '2nd Year',
   roll: 'CS123456',
-  category: 'General',
+  category: 'Weak',
 };
 
 const predictedSemesterData = [
@@ -32,13 +32,16 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 const StudentRecommendations = () => {
   return (
     <div className="flex dashboard-container">
-      <div className="sidebar bg-gray-100 p-5 h-screen shadow-lg">
+      <div className="sidebar bg-gray-100 p-5 h-[143vh] shadow-lg">
         <h2 className="font-bold text-xl mb-4">Student Details</h2>
         <div className="details-card bg-white p-5 rounded-lg shadow">
           <p><strong>Name:</strong> {studentDetails.name}</p>
           <p><strong>Branch:</strong> {studentDetails.branch}</p>
           <p><strong>Year:</strong> {studentDetails.year}</p>
           <p><strong>Roll No:</strong> {studentDetails.roll}</p>
+        </div>
+        
+        <div className="details-card bg-white p-5 rounded-lg shadow mt-4">
           <p><strong>Category:</strong> {studentDetails.category}</p>
         </div>
       </div>

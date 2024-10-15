@@ -8,6 +8,7 @@ import StudentRecommendations from './pages/studentRecommendation.jsx';
 import Students from './pages/Students.jsx';
 import './App.css';
 import AddStudent from './pages/AddStudent.jsx';
+import UserProfile from './pages/UserProfile.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/students" element={<Students />} />
             
               <Route path='/AddStudent' element={<AddStudent/>}></Route>
+              <Route path='/studentprofile' element={<UserProfile/>}/>
             </Routes>
           </main>
         </div>
