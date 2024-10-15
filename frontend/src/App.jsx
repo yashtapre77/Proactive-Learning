@@ -7,6 +7,7 @@ import StudentDashboard from './pages/studentDashboard.jsx';
 import StudentRecommendations from './pages/studentRecommendation.jsx';
 import Students from './pages/Students.jsx';
 import './App.css';
+import AddStudent from './pages/AddStudent.jsx';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
               <Route path="/student-dashboard" element={<StudentDashboard />} />
               <Route path="/student-recommendations" element={<StudentRecommendations />} />
               <Route path="/students" element={<Students />} />
+            
+              <Route path='/AddStudent' element={<AddStudent/>}></Route>
             </Routes>
           </main>
         </div>

@@ -1,0 +1,106 @@
+/* General styling for the entire app */
+
+
+/* Main container styling */
+.AddStu {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #333; /* Black background */
+  color: #fff; /* White text */
+  margin: 0;
+  padding: 1px;
+}
+
+/* Header styling */
+.Add-header {
+  background-color: #ff7f00; /* Orange background */
+  padding: 20px;
+  border-bottom: 5px solid #fff; /* White border at the bottom */
+}
+
+.Add-header h1 {
+  color: #fff; /* White text for the header */
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Form styling inside the StudentForm component */
+.student-form {
+  background-color: #fff; /* White background for the form */
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the form */
+  color: #333; /* Black text inside the form */
+}
+
+/* Form heading */
+.student-form h2 {
+  color: #ff7f00; /* Orange text for the form heading */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* Layout for form elements */
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  gap: 20px; /* Space between form fields */
+}
+
+/* Individual form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333; /* Black text for labels */
+}
+
+/* Input field styling */
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+input[type="text"]:disabled {
+  background-color: #e9e9e9; /* Gray background when disabled */
+}
+
+/* Button styling */
+.buttons {
+  grid-column: span 2; /* Button spans both columns */
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff7f00; /* Orange button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e66700; /* Darker orange on hover */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr; /* Single-column layout on small screens */
+  }
+}
