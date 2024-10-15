@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import Sidebar from './Sidebar';
 
 const overallData = [
@@ -64,23 +64,23 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 const Dashboard = () => {
   const [selectedYear, setYear] = useState('Overall'); 
 
-  let lineChartData;
+  let barChartData;
   let cardTitle;
   let pieChartData;
   let projectsData;
 
   if (selectedYear === '3rdYear') {
-    lineChartData = thirdYearData;
+    barChartData = thirdYearData;
     cardTitle = '3rd Year';
     pieChartData = pieDataThirdYear;
     projectsData = projectsThirdYear;
   } else if (selectedYear === '4thYear') {
-    lineChartData = fourthYearData;
+    barChartData = fourthYearData;
     cardTitle = '4th Year';
     pieChartData = pieDataFourthYear;
     projectsData = projectsFourthYear;
   } else {
-    lineChartData = overallData; 
+    barChartData = overallData; 
     cardTitle = 'Overall';
     pieChartData = pieDataOverall;
     projectsData = projectsOverall;
@@ -95,16 +95,16 @@ const Dashboard = () => {
         <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Highest Mark</div>
         <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Lowest Mark</div>
         <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Median Score</div>
-        <div className="line-chart col-span-2 bg-white p-5 rounded-lg shadow">
+        <div className="bar-chart col-span-2 bg-white p-5 rounded-lg shadow">
           <h3 className="text-lg font-semibold">{cardTitle} Overview</h3>
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={lineChartData}>
+            <BarChart data={barChartData}>
               <XAxis dataKey="name" />
               <YAxis />
               <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
               <Tooltip />
-              <Line type="monotone" dataKey="value" stroke="#8884d8" />
-            </LineChart>
+              <Bar dataKey="value" fill="#8884d8" />
+            </BarChart>
           </ResponsiveContainer>
         </div>
 
