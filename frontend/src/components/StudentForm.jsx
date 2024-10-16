@@ -1,200 +1,80 @@
-import React, { useState } from "react";
-import "./StudentForm.css";
+import React, { useState, useContext } from "react";
+
+import InpComponent from "./InpComponent";
+import SelectComponent from "./SelectComponent";
+import { StudentDataContext } from "../contexts/context";
+
 
 const StudentForm = ({ student }) => {
-  const [isEditable, setIsEditable] = useState(false);
-  const [formData, setFormData] = useState({ ...student });
 
-  const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
-  };
 
-  const handleEditToggle = () => {
-    setIsEditable(!isEditable);
-  };
+  const context = useContext(StudentDataContext)
+  console.log(1, context.studData)
 
   return (
-    <div className="student-form">
-      <h2>Student Information</h2>
-      <form className="form">
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="age">Age:</label>
-          <input
-            type="text"
-            id="age"
-            value={formData.age}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="sex">Gender:</label>
-          <input
-            type="text"
-            id="sex"
-            value={formData.sex}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            value={formData.address}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="famsize">Family Size:</label>
-          <input
-            type="text"
-            id="famsize"
-            value={formData.famsize}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Pstatus">Parental Status:</label>
-          <input
-            type="text"
-            id="Pstatus"
-            value={formData.Pstatus}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Medu">Mother's Education:</label>
-          <input
-            type="text"
-            id="Medu"
-            value={formData.Medu}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Fedu">Father's Education:</label>
-          <input
-            type="text"
-            id="Fedu"
-            value={formData.Fedu}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Mjob">Mother's Job:</label>
-          <input
-            type="text"
-            id="Mjob"
-            value={formData.Mjob}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Fjob">Father's Job:</label>
-          <input
-            type="text"
-            id="Fjob"
-            value={formData.Fjob}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Grade_8_Marks">Grade 8 Marks:</label>
-          <input
-            type="text"
-            id="Grade_8_Marks"
-            value={formData.Grade_8_Marks}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Grade_9_Marks">Grade 9 Marks:</label>
-          <input
-            type="text"
-            id="Grade_9_Marks"
-            value={formData.Grade_9_Marks}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Grade_10_Marks">Grade 10 Marks:</label>
-          <input
-            type="text"
-            id="Grade_10_Marks"
-            value={formData.Grade_10_Marks}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Grade_11_Marks">Grade 11 Marks:</label>
-          <input
-            type="text"
-            id="Grade_11_Marks"
-            value={formData.Grade_11_Marks}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="Grade_12_Marks">Grade 12 Marks:</label>
-          <input
-            type="text"
-            id="Grade_12_Marks"
-            value={formData.Grade_12_Marks}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="course">Course:</label>
-          <input
-            type="text"
-            id="course"
-            value={formData.course}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="semester">Semester:</label>
-          <input
-            type="text"
-            id="semester"
-            value={formData.semester}
-            onChange={handleInputChange}
-            disabled={!isEditable}
-          />
-        </div>
 
-        <div className="buttons">
-          <button type="button" onClick={handleEditToggle}>
-            {isEditable ? "Save" : "Edit"}
-          </button>
-        </div>
-      </form>
+    <div className="w-[95vw]  rounded-xl flex flex-col items-center justify-center m-4 p-3 bg-gray-100">
+
+      <div className="w-[96%]  flex flex-wrap justify-between ">
+        <InpComponent itype="" iplaceholder="Enter Name" />
+        <SelectComponent ilabel="Select Gender" options={{ 1: "Yes", 0: "No" }} />
+        <InpComponent itype="number" iplaceholder="Enter Age" />
+
+        <InpComponent itype="number" iplaceholder="Enter Semester" />
+        <SelectComponent ilabel="Select Course" options={{ 1: "Yes", 0: "No" }} />
+
+        <SelectComponent ilabel="Select a dwelling area" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select Family Size" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select Parents Status" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select Mother Education" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select Father Enducatio" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select Father Job" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select Mother Job" options={{ 1: "Yes", 0: "No" }} />
+
+        <SelectComponent ilabel="Reason for Opting this school" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Select your Guardian" options={{ 1: "Yes", 0: "No" }} />
+        <InpComponent itype="number" iplaceholder="Enter College Travel Time" />
+        <InpComponent itype="number" iplaceholder="Enter Daily Study Hours" />
+        <InpComponent itype="number" iplaceholder="Number of Failures" />
+
+        <SelectComponent ilabel="Extra School Support" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Family Educational Support" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Extra Paid Classes" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Extra Curricual Activities" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Attended Nursery School" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Want to Take Higher Education" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Internet Access" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="In a Relationship" options={{ 1: "Yes", 0: "No" }} />
+
+        <SelectComponent ilabel="Rate Quality of Family Relationships" options={{ 1: "Yes", 0: "No" }} />
+        <InpComponent itype="number" iplaceholder="Freetime after College" />
+        <SelectComponent ilabel="Go out with Friends" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Workday Alcohol Consumption" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Weakend Alcohol Consumption" options={{ 1: "Yes", 0: "No" }} />
+        <SelectComponent ilabel="Rate Current Health Status" options={{ 1: "Yes", 0: "No" }} />
+        <InpComponent itype="number" iplaceholder="Total Absentes" />
+
+        <InpComponent itype="number" iplaceholder="First Semester Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Second Semester Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Third Semester Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Fourth Semester Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Fifth Semester Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Sixth Semester Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Seventh Semester Marks (Outof 100)" />
+
+        <InpComponent itype="number" iplaceholder="Eighth Grade Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Nineth Grade Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Tenth Grade Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Eleventh Grade Marks (Outof 100)" />
+        <InpComponent itype="number" iplaceholder="Twelfth Grade Marks (Outof 100)" />
+
+      </div>
+
+      <div>
+        <button type="button" className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#FFA500] text-white hover:bg-[rgb(255,129,84)] focus:outline-none  disabled:opacity-50 disabled:pointer-events-none mb-4 mt-6 " >
+          Add Student Data
+        </button>
+      </div>
     </div>
   );
 };

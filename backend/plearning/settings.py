@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d_%6z15rj@5&0$3_h5tev0&!6@x3$ivv*4ui4c&6n-)=vdh&2h'
+SECRET_KEY = 'django-insecure-5677nuzkd4g4evm5^j+or83r3++2bq9hn^y(o^dy%rf=*)iwn@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 EXTERNAL_APPS = [
     "rest_framework",
     "corsheaders",
-    "homepage",
+    "students",
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
@@ -58,11 +58,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+ROOT_URLCONF = 'plearning.urls'
+
 CORS_ALLOWED_ORIGINS = [
     " http://localhost:5173"
 ]
-
-ROOT_URLCONF = 'plearning.urls'
 
 TEMPLATES = [
     {
