@@ -8,6 +8,7 @@ import StudentRecommendations from './pages/studentRecommendation.jsx';
 import Students from './pages/Students.jsx';
 import './App.css';
 import AddStudent from './pages/AddStudent.jsx';
+import AuthTabs from './pages/login.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <main className="main-content">
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/loginSignUp" element={<AuthTabs/>} />
               <Route path="/student-dashboard" element={<StudentDashboard />} />
               <Route path="/student-recommendations" element={<StudentRecommendations />} />
               <Route path="/students" element={<Students />} />
