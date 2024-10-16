@@ -8,27 +8,17 @@ const passingPercentage = [
 
 const COLORS = ['#0088FE', '#FF8042'];
 
+const studentDetails = {
+  name: 'Gaurav bhau',
+  branch: 'Computer Science',
+  year: '2nd Year',
+  roll: 'CS123456',
+  category: 'Weak',
+};
+
+
 const dataSets = {
-  '3rd Year': {
-    semesterData: [
-      { name: 'Sem 5', barValue: 36000, lineValue: 37000 },
-      { name: 'Sem 6', barValue: 38000, lineValue: 39000 },
-    ],
-    schoolData: [
-      { name: '11th', barValue: 22000, lineValue: 23000 },
-      { name: '12th', barValue: 24000, lineValue: 26000 },
-    ],
-  },
-  '4th Year': {
-    semesterData: [
-      { name: 'Sem 7', barValue: 40000, lineValue: 41000 },
-      { name: 'Sem 8', barValue: 42000, lineValue: 43000 },
-    ],
-    schoolData: [
-      { name: '11th', barValue: 22000, lineValue: 23000 },
-      { name: '12th', barValue: 24000, lineValue: 26000 },
-    ],
-  },
+
   Overall: {
     semesterData: [
       { name: 'Sem 1', barValue: 20000, lineValue: 22000 },
@@ -47,16 +37,6 @@ const dataSets = {
   },
 };
 
-const Sidebar = ({ setYear }) => {
-  return (
-    <div className="sidebar bg-gray-100 p-5 h-screen shadow-lg">
-      <h2 className="font-bold text-xl mb-4">Select Year</h2>
-      <button onClick={() => setYear('Overall')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">Overall</button>
-      <button onClick={() => setYear('3rd Year')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">3rd Year</button>
-      <button onClick={() => setYear('4th Year')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">4th Year</button>
-    </div>
-  );
-};
 
 const StudentDashboard = () => {
   const [selectedYear, setYear] = useState('Overall');
@@ -65,10 +45,22 @@ const StudentDashboard = () => {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar setYear={setYear} />
+      <div className="sidebar bg-gray-100 p-5 h-[120vh] shadow-lg">
+        <h2 className="font-bold text-xl mb-4">Student Details</h2>
+        <div className="details-card bg-white p-5 rounded-lg shadow">
+          <p><strong>Name:</strong> {studentDetails.name}</p>
+          <p><strong>Branch:</strong> {studentDetails.branch}</p>
+          <p><strong>Year:</strong> {studentDetails.year}</p>
+          <p><strong>Roll No:</strong> {studentDetails.roll}</p>
+        </div>
+        
+        <div className="details-card bg-white p-5 rounded-lg shadow mt-4">
+          <p><strong>Category:</strong> {studentDetails.category}</p>
+        </div>
+      </div>
 
       {/* Dashboard Content */}
-      <div className="grid grid-cols-4 gap-4 p-5 flex-1 bg-gray-50">
+      <div className="grid grid-cols-4 gap-4 p-5 flex-1 bg-white">
         
         {/* Details Cards */}
         <div className="card bg-white p-5 rounded-lg shadow">Details - Student Name</div>
