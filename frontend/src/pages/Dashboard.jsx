@@ -2,29 +2,39 @@ import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Rectangle, Legend } from 'recharts';
 
 const overallData = [
-  { name: 'Jan', value: 20000 },
-  { name: 'Feb', value: 24000 },
-  { name: 'Mar', value: 28000 },
-  { name: 'Apr', value: 32000 },
-  { name: 'May', value: 36000 },
-  { name: 'Jun', value: 40000 },
+  { name: 'Sem1', value: 70 },
+  { name: 'Sem2', value: 55 },
+  { name: 'Sem3', value: 59 },
+  { name: 'Sem4', value: 65},
+  { name: 'Sem5', value: 80 },
+  { name: 'Sem6', value: 72 },
+  { name: 'Sem7', value: 93 },
+  { name: 'Sem8', value: 75 },
 ];
 
 const thirdYearData = [
-  { name: 'Jan', value: 10000 },
-  { name: 'Feb', value: 12000 },
-  { name: 'Mar', value: 14000 },
+  { name: 'Sem1', value: 70 },
+  { name: 'Sem2', value: 55 },
+  { name: 'Sem3', value: 59 },
+  { name: 'Sem4', value: 65 },
+  { name: 'Sem5', value: 80 },
 ];
 
 const fourthYearData = [
-  { name: 'Jul', value: 22000 },
-  { name: 'Aug', value: 24000 },
-  { name: 'Sep', value: 26000 },
+  { name: 'Sem1', value: 70 },
+  { name: 'Sem2', value: 55 },
+  { name: 'Sem3', value: 59 },
+  { name: 'Sem4', value: 65 },
+  { name: 'Sem5', value: 80 },
+  { name: 'Sem6', value: 93 },
+  { name: 'Sem7', value: 72 },
 ];
 
 const pieDataOverall = [
-  { name: 'Weak', value: 400 },
+  { name: 'Weak', value: 100 },
   { name: 'Average', value: 300 },
+  { name: 'Strong', value: 250 },
+  { name: 'Strong', value: 200 },
   { name: 'Strong', value: 300 },
 ];
 
@@ -43,7 +53,6 @@ const pieDataFourthYear = [
 const projectsOverall = [
   { name: 'Project A', progress: 100 },
   { name: 'Project B', progress: 100 },
-  { name: 'Project C', progress: 70 },
 ];
 
 const projectsThirdYear = [
@@ -96,10 +105,11 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-4 gap-4 p-5 flex-1">
-        <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Total strength</div>
-        <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Total Departments</div>
-        <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Highest Mark</div>
-        <div className="card bg-white p-5 rounded-lg shadow">{cardTitle} - Median Score</div>
+        <div className="card bg-white p-5 rounded-lg shadow"><strong>Total strength - <t/> 5 </strong> </div>
+        <div className="card bg-white p-5 rounded-lg shadow"><strong>Total Departments - <t/> 4 </strong></div>
+        <div className="card bg-white p-5 rounded-lg shadow"><strong>Total Girls - <t/> 2 </strong></div>
+        <div className="card bg-white p-5 rounded-lg shadow"><strong>Total  Boys - <t/>  3 </strong></div>
+
         <div className="bar-chart col-span-2 bg-white p-5 rounded-lg shadow">
           <h3 className="text-lg font-semibold">{cardTitle} Overview</h3>
           <ResponsiveContainer width="100%" height={300}>

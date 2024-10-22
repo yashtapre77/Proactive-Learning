@@ -45,6 +45,8 @@ const studentData = {
     Grade_12_Marks: 0,
     course: 0,
     semester: 1,
+    student_categories:"below average" ,
+    cluster_group:0,
   };
 
 

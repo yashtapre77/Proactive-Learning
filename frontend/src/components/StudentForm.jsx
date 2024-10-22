@@ -4,6 +4,7 @@ import InpComponent from "./InpComponent";
 import SelectComponent from "./SelectComponent";
 import { StudentDataContext } from "../contexts/context";
 import AxiosInstance from "../axios/axios";
+import studentData from "../contexts/context";
 
 
 const StudentForm = () => {
@@ -13,7 +14,10 @@ const StudentForm = () => {
   const finalData = context.studData
 
   const handleAddData = (e) => {
-    AxiosInstance.post("students/", {
+    alert("Data Sucssessfully added ")
+    context.setStudData(studentData)
+    console.log(finalData)
+    AxiosInstance.post(`students/`, {
       name: finalData.name,
       age: finalData.age,
       sex: finalData.sex,
@@ -59,8 +63,15 @@ const StudentForm = () => {
       course: finalData.course,
       semester: finalData.semester,
       student_categories: "below average",
-      cluster_group:0,
+      cluster_group: 0
+    }).then(response => {
+      console.log(response.data);
     })
+      .catch(error => {
+        console.error("There was an error!", error);
+      });
+    window.location.reload()
+    window.history.back()
   }
 
   return (

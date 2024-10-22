@@ -12,6 +12,7 @@ import UserProfile from './pages/UserProfile.jsx';
 import InpComponent from './components/InpComponent.jsx';
 import { StudentDataContext } from './contexts/context.js';
 import data from "./contexts/context.js";
+import LandingPage from './pages/landing.jsx';
 
 function App() {
   const [studData, setStudData] = useState(data);
@@ -24,7 +25,8 @@ function App() {
           <div className="content">
             <main className="main-content">
               <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/" element={<LandingPage/>} />
+                <Route path="/home" element={<Dashboard />} />
                 <Route path="/loginSignUp" element={<AuthTabs />} />
                 <Route path="/student-dashboard" element={<StudentDashboard />} />
                 <Route path="/student-recommendations" element={<StudentRecommendations />} />

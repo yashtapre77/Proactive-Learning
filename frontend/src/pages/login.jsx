@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom"
 
 function AuthTabs() {
   const [activeTab, setActiveTab] = useState('login');
@@ -71,12 +72,14 @@ function LoginForm() {
           required
         />
       </div>
+      <Link to="/home">
       <button
         type="submit"
         className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
       >
         Login
       </button>
+      </Link>
     </form>
   );
 }
@@ -128,12 +131,14 @@ function SignupForm() {
           required
         />
       </div>
+      <Link to="/home">
       <button
         type="submit"
         className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
       >
         Signup
       </button>
+      </Link>
     </form>
   );
 }

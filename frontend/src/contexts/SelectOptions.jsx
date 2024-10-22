@@ -17,7 +17,8 @@ const SelectOptions = {
      higher: { 0:"No", 1:"Yes"} ,
      internet: { 0:"No", 1:"Yes"} ,
      romantic: { 0:"No", 1: "Yes"} ,
-     course: { 0: "Computer Science and Engineering", 1:"Data Science", 2 :"Airtificial Inteligence and Machine Learning", 3: "Cyber Security" }
+     course: { 0: "Computer Science and Engineering", 1:"Data Science", 2 :"Airtificial Inteligence and Machine Learning", 3: "Cyber Security" },
+     cluster_group:{0:"Below Average",1:"Above Average",2:"Strong",3:"Weak",4:"Average"}
 }
 
 export default SelectOptions 

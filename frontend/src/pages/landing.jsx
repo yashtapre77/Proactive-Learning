@@ -1,4 +1,5 @@
 import React from 'react';
+import landingImage from "../assets/landing_undraw.svg"
 
 const LandingPage = () => {
   return (
@@ -13,7 +14,7 @@ const LandingPage = () => {
             Our platform provides personalized dashboards for students to track their progress and receive tailored performance improvement suggestions.
           </p>
           <a
-            href="#features"
+            href="loginSignUp"
             className="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-200"
           >
             Get Started
@@ -21,7 +22,7 @@ const LandingPage = () => {
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0">
           <img
-            src="https://via.placeholder.com/500"
+            src= {landingImage}
             alt="Student Success"
             className="w-full h-auto rounded shadow-lg"
           />
@@ -73,42 +74,17 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-8">What Our Students Say</h2>
-          <div className="flex flex-col md:flex-row md:space-x-8">
-            <div className="bg-white p-6 rounded-lg shadow-md mb-4 md:mb-0 flex-1">
-              <p className="mb-4">
-                “This platform has transformed the way I approach my studies. The personalized dashboard is a game-changer!”
-              </p>
-              <h4 className="font-semibold">– Emily Clark</h4>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md mb-4 md:mb-0 flex-1">
-              <p className="mb-4">
-                “I love how I can track my progress and set goals. The recommendations really help me focus on what I need to improve.”
-              </p>
-              <h4 className="font-semibold">– James Smith</h4>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md mb-4 md:mb-0 flex-1">
-              <p className="mb-4">
-                “The community support has been invaluable. It’s great to connect with other students and share experiences!”
-              </p>
-              <h4 className="font-semibold">– Mia Johnson</h4>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-blue-600 text-white text-center">
+      <section className="py-16 bg-white text-black text-center">
         <h2 className="text-3xl font-bold mb-4">Join Us Today!</h2>
         <p className="mb-6">
           Sign up to create your personalized dashboard and start tracking your academic success.
         </p>
         <a
-          href="/signup"
-          className="bg-white text-blue-600 px-5 py-3 rounded hover:bg-gray-200 transition duration-200"
+          href="/loginSignUp"
+          className="bg-gray-200 text-blue-600 px-5 py-3 rounded  transition duration-200"
         >
           Sign Up Now
         </a>

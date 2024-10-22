@@ -1,8 +1,11 @@
 import React from 'react'
+import abc from "../assets/image.png"
 
 function ProfileIcon() {
   return (
-    <div>ProfileIcon</div>
+    <div>
+      <img className="w-[2vw]" src={abc} alt="" />
+    </div>
   )
 }
 
