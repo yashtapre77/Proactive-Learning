@@ -97,7 +97,7 @@ const Dashboard = () => {
   return (
     <div className="flex dashboard-container">
       {/* Sidebar component */}
-      <div className="sidebar bg-gray-100 p-5 h-screen shadow-lg">
+      <div className="sidebar bg-gray-100 p-5 h-[60vh] shadow-lg">
         <h2 className="font-bold text-xl mb-4">Select Year</h2>
         <button onClick={() => setYear('Overall')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">Overall</button>
         <button onClick={() => setYear('3rdYear')} className="block w-full my-2 p-3 bg-blue-500 text-white rounded">3rd Year</button>
@@ -125,32 +125,19 @@ const Dashboard = () => {
 
         <div className="pie-chart col-span-2 bg-white p-5 rounded-lg shadow">
           <h3 className="text-lg font-semibold">{cardTitle} Strength Distribution</h3>
-          <PieChart width={400} height={300}>
-            <Pie
-              data={pieChartData}
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={80}
-              fill="#82ca9d"
-              label
-            >
-              {pieChartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
+
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={pieChartData}>
+              <XAxis dataKey="name" />
+              <YAxis />
+              <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+              <Tooltip />
+              <Bar dataKey="value" fill="#8884d8" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
 
-        <div className="projects col-span-2 bg-white p-5 rounded-lg shadow">
-          <h3 className="text-lg font-semibold">Projects</h3>
-          {projectsData.map((project, index) => (
-            <div key={index} className="project-item mb-4">
-              <span className="block font-bold">{project.name}</span>
-              <progress className="progress progress-success" value={project.progress} max="100"></progress>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </div>
   );

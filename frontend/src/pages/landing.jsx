@@ -1,9 +1,10 @@
 import React from 'react';
-import landingImage from "../assets/landing_undraw.svg"
+import landingImage from "../assets/landing-image.svg"
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="">
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-16">
         <div className="md:w-1/2">
@@ -13,18 +14,16 @@ const LandingPage = () => {
           <p className="text-lg text-gray-600 mb-6">
             Our platform provides personalized dashboards for students to track their progress and receive tailored performance improvement suggestions.
           </p>
-          <a
-            href="loginSignUp"
-            className="bg-blue-600 text-white px-5 py-3 rounded hover:bg-blue-700 transition duration-200"
-          >
+          
+          <Link to="loginSignUp"><button className="bg-[#582E5E] text-white px-5 py-3 rounded hover:bg-[#471B4A] transition duration-200">
             Get Started
-          </a>
+          </button></Link>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0">
           <img
             src= {landingImage}
             alt="Student Success"
-            className="w-full h-auto rounded shadow-lg"
+            className="w-full h-auto rounded"
           />
         </div>
       </section>

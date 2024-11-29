@@ -20,10 +20,10 @@ function App() {
   return (
     <StudentDataContext.Provider value={{ studData, setStudData }}>
       <Router>
-        <div className="container">
+        <div className="flex flex-col min-h-[100vh]">
           <Header />
-          <div className="content">
-            <main className="main-content">
+          <div className="">
+            <main className="">
               <Routes>
                 <Route path="/" element={<LandingPage/>} />
                 <Route path="/home" element={<Dashboard />} />
@@ -37,7 +37,9 @@ function App() {
               </Routes>
             </main>
           </div>
-          <Footer />
+          <div className="mt-auto">
+            <Footer />
+          </div>
         </div>
       </Router>
     </StudentDataContext.Provider>

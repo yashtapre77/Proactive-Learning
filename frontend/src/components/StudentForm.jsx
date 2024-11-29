@@ -13,11 +13,12 @@ const StudentForm = () => {
   const context = useContext(StudentDataContext)
   const finalData = context.studData
 
-  const handleAddData = (e) => {
+  const handleAddData = async (e) => {
     alert("Data Sucssessfully added ")
     context.setStudData(studentData)
     console.log(finalData)
-    AxiosInstance.post(`students/`, {
+    // AxiosInstance.post(``, {
+    const toAddData = {
       name: finalData.name,
       age: finalData.age,
       sex: finalData.sex,
@@ -64,14 +65,30 @@ const StudentForm = () => {
       semester: finalData.semester,
       student_categories: "below average",
       cluster_group: 0
-    }).then(response => {
-      console.log(response.data);
-    })
-      .catch(error => {
-        console.error("There was an error!", error);
-      });
+    // }).then(response => {
+      // console.log(1, response.data);
+    // })
+    //   .catch(error => {
+    //     console.error("There was an error!", error);
+      }
+    // );
     window.location.reload()
     window.history.back()
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/students/create/",{
+        method: "POST",
+        headers:{
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(toAddData)
+      });
+      const data = await response.json();
+      console.log(data)
+    }
+    catch (error) {
+      console.log(error)
+    }
   }
 
   return (

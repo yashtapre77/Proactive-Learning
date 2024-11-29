@@ -9,9 +9,6 @@ const COLORS = ['#0088FE', '#FF8042'];
 
 
 
-
-
-
 const StudentDashboard = (props) => {
 
   const con = useContext(StudentDataContext)
@@ -91,7 +88,7 @@ const StudentDashboard = (props) => {
       </div>
 
       {/* Dashboard Content */}
-      <div className="grid grid-cols-4 gap-4 p-5 flex-1 bg-white">
+      <div className="grid grid-cols-4 gap-4 p-5 flex-1 bg-white h-[50vh]">
         
         {/* Details Cards */}
         
@@ -100,7 +97,7 @@ const StudentDashboard = (props) => {
         <div className="card bg-white p-5 rounded-lg shadow">Max Marks </div> */}
 
         {/* Semester Score Graph (Bar + Line Chart) */}
-        <div className="col-span-2 bg-white p-5 rounded-lg shadow">
+        <div className="col-span-2 bg-white p-5 pb-0 rounded-lg shadow">
           <h3 className="text-lg font-semibold">Semester Scores Overview ({selectedYear})</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={semesterData}>

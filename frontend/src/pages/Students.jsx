@@ -8,14 +8,24 @@ function Students() {
 
     const [fetchedData, setFetchedData] = useState(null);
     
-    const getData = () => {
-        AxiosInstance.get(`students/`).then((res)=>{
-            setFetchedData(res.data)
-        })
-        .catch((error) => {
-            console.error("Error fetching data:", error); // Handle errors
-        });
-    }
+    const getData = async () => {
+        // AxiosInstance.get(`students/`).then((res)=>{
+        //     setFetchedData(res.data)
+        // })
+        // .catch((error) => {
+        //     console.error("Error fetching data:", error); // Handle errors
+        // });
+
+        try{
+            const response = await fetch("http://127.0.0.1:8000/api/students/");
+            const data = await response.json();
+            console.log(data)
+            setFetchedData(data)
+        }
+        catch(err){
+            console.log(err)
+        }
+    };
     
     useEffect(() => {
         getData();

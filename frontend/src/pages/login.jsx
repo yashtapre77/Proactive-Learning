@@ -3,31 +3,18 @@ import { Link } from "react-router-dom"
 
 function AuthTabs() {
   const [activeTab, setActiveTab] = useState('login');
+  const [nav, setNav] = useState('')
+
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="my-10 flex items-center justify-center">
       <div className="w-full max-w-md p-6 bg-white shadow-md rounded-md">
 
         <div className="flex border-b mb-6">
-          <button
-            className={`px-4 py-2 w-1/2 text-center font-semibold transition duration-300 ${
-              activeTab === 'login'
-                ? 'border-b-2 border-black text-black shadow'
-                : 'text-gray-500'
-            }`}
-            onClick={() => setActiveTab('login')}
-          >
+          <button className={`px-4 py-2 w-1/2 text-center font-semibold transition duration-300 ${activeTab === 'login'? 'border-b-2 border-black text-black shadow': 'text-gray-500'} hover:bg-[#582E5E] hover:text-white`} onClick={() => setActiveTab('login')}>
             Login
           </button>
-          <button
-            className={`px-4 py-2 w-1/2 text-center font-semibold transition duration-300 ${
-              activeTab === 'signup'
-                ? 'border-b-2 border-black text-black shadow'
-                : 'text-gray-500'
-            }`}
-            onClick={() => setActiveTab('signup')}
-          >
-            Signup
+          <button className={`px-4 py-2 w-1/2 text-center font-semibold transition duration-300 ${activeTab === 'signup' ? 'border-b-2 border-black text-black shadow' :'text-gray-500 hover:bg-[#582E5E] hover:text-white checked:hover:bg-[#582E5E]'}`} onClick={() => setActiveTab('signup')}> Signup
           </button>
         </div>
 
@@ -72,13 +59,13 @@ function LoginForm() {
           required
         />
       </div>
-      <Link to="/home">
-      <button
-        type="submit"
-        className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
-      >
-        Login
-      </button>
+      <Link to='/home'>
+        <button
+          type="submit"
+          className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
+        >
+          Login
+        </button>
       </Link>
     </form>
   );
@@ -131,13 +118,14 @@ function SignupForm() {
           required
         />
       </div>
-      <Link to="/home">
-      <button
-        type="submit"
-        className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
-      >
-        Signup
-      </button>
+      {email === 'yashtapre77@gmail.com' ? setNav('/home'):setNav('')}
+      <Link to={nav}>
+        <button
+          type="submit"
+          className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300"
+        >
+          Signup
+        </button>
       </Link>
     </form>
   );
